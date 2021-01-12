@@ -46,17 +46,17 @@ class ProdukController extends Controller{
 	function update(Produk $produk){
 		$produk->nama = request('nama');
 		$produk->stok = request('stok');
-		$produk->foto = request('foto');
 		$produk->harga = request('harga');
 		$produk->berat = request('berat');
 		$produk->deskripsi = request('deskripsi');
-		
 		$produk->save();
+		$produk->handleUploadFoto();
 
 		return redirect('admin/produk')->with('warning', 'Data Berhasil Diupdate');	
 	}
 
 	function destroy(Produk $produk){
+		$produk->handleDelete();
 		$produk->delete();
 
 		return redirect('admin/produk')->with('danger', 'Data Berhasil Dihapus');	

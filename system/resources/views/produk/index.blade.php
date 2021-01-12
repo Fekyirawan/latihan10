@@ -1,4 +1,4 @@
-
+@inject('timeService', 'App\Services\TimeServices')
 @extends('template.beranda')
 @section('content')
   <div class="container">
@@ -11,6 +11,9 @@
           </div>
           <div class="card" style="margin-top: 40px;">
             <div class="card-header">
+              <div class="float-right">
+                   Jam : {{$timeService->showTimeNow()}}
+              </div>
               filter
             </div>
             <div class="card-body">

@@ -18,6 +18,9 @@
 
   <link rel="stylesheet" href="{{url('public')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="{{url('public')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+  @stack('style')
+ 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -62,8 +65,10 @@
 <script src="{{url('public')}}/dist/js/adminlte.js"></script>
 <script src="{{url('public')}}/dist/js/pages/dashboard.js"></script>
 <script src="{{url('public')}}/dist/js/demo.js"></script>
+
+@stack('script')
 <script>
-  $(".table-datatable").DataTable();
+    $(".table-datatable").DataTable();
 </script>
 </body>
 </html>
